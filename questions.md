@@ -16,7 +16,7 @@ the sentence(s) :
 formula has the same number of opening and closing parentheses.
 7. Write a program that inputs a line of text and prints out the count of vowels in it.
 8. Write a program to input a line of text and print the biggest word (length wise) from it.
-9. Write a program to input a line of text and create a new line of text where cach word of
+9. Write a program to input a line of text and create a new line of text where each word of
 input line is reversed.
 
 ## File name for each question
@@ -27,5 +27,5 @@ input line is reversed.
 5 -->  sentence.py
 6 -->  formula.py
 7 -->  vowel_count.py
-8 -->
+8 -->  big_word.py
 9 -->
