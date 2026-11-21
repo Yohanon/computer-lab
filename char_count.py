@@ -1,3 +1,4 @@
+#  1. Write a program to count the number of times a character occurs in the given string,
 text= input("Enter a string: ")
 while True:
     char= input("Enter the charecter to count: ")
