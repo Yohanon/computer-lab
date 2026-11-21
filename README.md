@@ -10,30 +10,29 @@ This repository contains Python solutions for computer lab exercises covering st
 Write a program to count the number of times a character occurs in the given string.
 
 ### Code: `char_count.py`
-```text
-───────┬────────────────────────────────────────────────────────────────────────
-       │ File: char_count.py
-───────┼────────────────────────────────────────────────────────────────────────
-   1 + │ #  1. Write a program to count the number of times a character occurs in the given string,
-   2   │ text= input("Enter a string: ")
-   3   │ while True:
-   4   │     char= input("Enter the charecter to count: ")
-   5   │     if len(char)==1:
-   6   │         break
-   7   │     else:
-   8   │         print("Please enter a single charecter")
-   9   │ 
-  10   │ counter= text.count(char)
-  11   │ print("The charecter",char,"occurs",counter,"times")
-───────┴────────────────────────────────────────────────────────────────────────
+```python
+#  1. Write a program to count the number of times a character occurs in the given string,
+text= input("Enter a string: ")
+while True:
+    char= input("Enter the charecter to count: ")
+    if len(char)==1:
+        break
+    else:
+        print("Please enter a single charecter")
+
+counter= text.count(char)
+print("The charecter",char,"occurs",counter,"times")
 ```
 
 ### Terminal Output
 ```text
-Enter a string: hello world
-Enter the charecter to count: l
-The charecter l occurs 3 times
+Enter a string: Java is used in most enterprise software
+Enter the charecter to count: i
+The charecter i occurs 3 times
 ```
+
+### Output Screenshot
+![Question 1 Output](Screenshot/screenshot-2026-11-21_20-25-57-alacritty.png)
 
 ---
 
@@ -43,29 +42,28 @@ The charecter l occurs 3 times
 Write a program which replaces all vowels in the string with '*'.
 
 ### Code: `star_vowel.py`
-```text
-─────┬──────────────────────────────────────────────────────────────────────────
-     │ File: star_vowel.py
-─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ # program to print * instead of vowels
-   2 │ str = input("Enter a string please: ")
-   3 │ compare = "AEIOUaeiou"
-   4 │ str2=""
-   5 │ for i in str:
-   6 │     if i in compare:
-   7 │        str2+="*"
-   8 │     else:
-   9 │        str2=str2 + i
-  10 │ 
-  11 │ print(f"The modified string is: {str2}")
-─────┴──────────────────────────────────────────────────────────────────────────
+```python
+# program to print * instead of vowels
+str = input("Enter a string please: ")
+compare = "AEIOUaeiou"
+str2=""
+for i in str:
+    if i in compare:
+       str2+="*"
+    else:
+       str2=str2 + i
+
+print(f"The modified string is: {str2}")
 ```
 
 ### Terminal Output
 ```text
-Enter a string please: Computer Science
-The modified string is: C*mp*t*r Sc**nc*
+Enter a string please: Hello world is the first program every programmer has written
+The modified string is: H*ll* w*rld *s th* f*rst pr*gr*m *v*ry pr*gr*mm*r h*s wr*tt*n
 ```
+
+### Output Screenshot
+![Question 2 Output](Screenshot/screenshot-2026-11-21_20-31-02-alacritty.png)
 
 ---
 
@@ -75,32 +73,31 @@ The modified string is: C*mp*t*r Sc**nc*
 Write a program which reverses a string and stores the reversed string in a new string.
 
 ### Code: `rev_str.py`
-```text
-─────┬──────────────────────────────────────────────────────────────────────────
-     │ File: rev_str.py
-─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ # Take input from user
-   2 │ original_string = input("Enter a string: ")
-   3 │ 
-   4 │ # Initialize an empty string to store reversed characters
-   5 │ reversed_string = ""
-   6 │ 
-   7 │ # Loop through each character and prepend it to the new string
-   8 │ for char in original_string:
-   9 │     reversed_string = char + reversed_string
-  10 │ 
-  11 │ # Display the results
-  12 │ print("Original string:", original_string)
-  13 │ print("Reversed string:", reversed_string)
-─────┴──────────────────────────────────────────────────────────────────────────
+```python
+# Take input from user
+original_string = input("Enter a string: ")
+
+# Initialize an empty string to store reversed characters
+reversed_string = ""
+
+# Loop through each character and prepend it to the new string
+for char in original_string:
+    reversed_string = char + reversed_string
+
+# Display the results
+print("Original string:", original_string)
+print("Reversed string:", reversed_string)
 ```
 
 ### Terminal Output
 ```text
-Enter a string: Python Programming
-Original string: Python Programming
-Reversed string: gnimmargorP nohtyP
+Enter a string: i love python
+Original string: i love python
+Reversed string: nohtyp evol i
 ```
+
+### Output Screenshot
+![Question 3 Output](Screenshot/screenshot-2026-11-21_20-27-51-alacritty.png)
 
 ---
 
@@ -110,44 +107,43 @@ Reversed string: gnimmargorP nohtyP
 Write a program that prompts for a phone number of 10 digits and two dashes, with dashes after the area code and the next three numbers. For example, 017-555-1212 is a legal input. Display if the phone number entered is valid format or not and display if the phone number is valid or not (i.e., contains just the digits and dash at specific places).
 
 ### Code: `phone_number.py`
-```text
-─────┬──────────────────────────────────────────────────────────────────────────
-     │ File: phone_number.py
-─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ print("Enter the phone number in this format: XXX-XXX-XXXX")
-   2 │ number = input("Enter the Phone number: ").strip()
-   3 │ flag = True
-   4 │ reason=""
-   5 │ if number.count("-")!=2:
-   6 │     flag=False
-   7 │     reason="Wrong number of ddashes"
-   8 │ else:
-   9 │     if len(number)!=12:
-  10 │         flag = False
-  11 │         reason="The number entered is not 10 digits"
-  12 │     else:
-  13 │         if number[3]!="-" or number[7]!="-":
-  14 │             flag = False
-  15 │             reason="Dashes arent in the right places"
-  16 │         else:
-  17 │             _number=number.split("-")
-  18 │             if _number[2].isdigit()==False or _number[1].isdigit()==False or _number[0].isdigit()==False:
-  19 │                 flag=False
-  20 │                 reason="The entered number contains other charcters in the place of numbers"
-  21 │ 
-  22 │ if flag==True:
-  23 │     print("Valid number")
-  24 │ else:
-  25 │     print(f"Number is not valid.\nReason: {reason}")
-─────┴──────────────────────────────────────────────────────────────────────────
+```python
+print("Enter the phone number in this format: XXX-XXX-XXXX")
+number = input("Enter the Phone number: ").strip()
+flag = True
+reason=""
+if number.count("-")!=2:
+    flag=False
+    reason="Wrong number of ddashes"
+else:
+    if len(number)!=12:
+        flag = False
+        reason="The number entered is not 10 digits"
+    else:
+        if number[3]!="-" or number[7]!="-":
+            flag = False
+            reason="Dashes arent in the right places"
+        else:
+            _number=number.split("-")
+            if _number[2].isdigit()==False or _number[1].isdigit()==False or _number[0].isdigit()==False:
+                flag=False
+                reason="The entered number contains other charcters in the place of numbers"
+
+if flag==True:
+    print("Valid number")
+else:
+    print(f"Number is not valid.\nReason: {reason}")
 ```
 
 ### Terminal Output
 ```text
 Enter the phone number in this format: XXX-XXX-XXXX
-Enter the Phone number: 017-555-1212
+Enter the Phone number: 567-454-9658
 Valid number
 ```
+
+### Output Screenshot
+![Question 4 Output](Screenshot/screenshot-2026-11-21_20-27-02-alacritty.png)
 
 ---
 
@@ -160,33 +156,32 @@ Write a program that should prompt the user to type some sentence(s) followed by
     3. Percentage of characters that are alphanumeric
 
 ### Code: `sentence.py`
-```text
-─────┬──────────────────────────────────────────────────────────────────────────
-     │ File: sentence.py
-─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ sentence = input("Enter sentence(s) and hit enter to submit\nEnter your sentence here: ")
-   2 │ number_word=len(sentence.split())
-   3 │ number_characters=len(sentence)
-   4 │ #printing the number of words and charcter
-   5 │ print(f"Number of words: {number_word}")
-   6 │ print(f"Number of character: {number_characters}")
-   7 │ if number_characters !=0:
-   8 │     alphanumeric_counter=0
-   9 │     for i in sentence:
-  10 │         if i.isalnum():
-  11 │             alphanumeric_counter+=1
-  12 │     print(f"Percentage of alphanumeric character: {(alphanumeric_counter/number_characters)*100}%")
-─────┴──────────────────────────────────────────────────────────────────────────
+```python
+sentence = input("Enter sentence(s) and hit enter to submit\nEnter your sentence here: ")
+number_word=len(sentence.split())
+number_characters=len(sentence)
+#printing the number of words and charcter
+print(f"Number of words: {number_word}")
+print(f"Number of character: {number_characters}")
+if number_characters !=0:
+    alphanumeric_counter=0
+    for i in sentence:
+        if i.isalnum():
+            alphanumeric_counter+=1
+    print(f"Percentage of alphanumeric character: {(alphanumeric_counter/number_characters)*100}%")
 ```
 
 ### Terminal Output
 ```text
 Enter sentence(s) and hit enter to submit
-Enter your sentence here: Hello, World! 123
-Number of words: 3
-Number of character: 17
-Percentage of alphanumeric character: 76.47058823529412%
+Enter your sentence here: C is the grandfather of all mordern programing languages. It is a low level procedural language which is easy to bootstrap. The GCC and clang compilers are popular compiler of C
+Number of words: 30
+Number of character: 170
+Percentage of alphanumeric character: 81.17647058823529%
 ```
+
+### Output Screenshot
+![Question 5 Output](Screenshot/screenshot-2026-11-21_20-30-06-alacritty.png)
 
 ---
 
@@ -196,25 +191,24 @@ Percentage of alphanumeric character: 76.47058823529412%
 Write a program to input a formula with some brackets and checks, and prints out if the formula has the same number of opening and closing parentheses.
 
 ### Code: `formula.py`
-```text
-─────┬──────────────────────────────────────────────────────────────────────────
-     │ File: formula.py
-─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ exprestion=input("Enter your formula: ")
-   2 │ left_closing_bracket = exprestion.count("(")
-   3 │ right_closing_bracket = exprestion.count(")")
-   4 │ if left_closing_bracket == right_closing_bracket:
-   5 │     print("The formula has same number of opening and closing paranthesis")
-   6 │ else:
-   7 │     print("The formula has different number of opening and closing pranthesis\nFormula is invalid")
-─────┴──────────────────────────────────────────────────────────────────────────
+```python
+exprestion=input("Enter your formula: ")
+left_closing_bracket = exprestion.count("(")
+right_closing_bracket = exprestion.count(")")
+if left_closing_bracket == right_closing_bracket:
+    print("The formula has same number of opening and closing paranthesis")
+else:
+    print("The formula has different number of opening and closing pranthesis\nFormula is invalid")
 ```
 
 ### Terminal Output
 ```text
-Enter your formula: (a + b) * (c + d)
+Enter your formula: b2(a+b) ((a+b)*c)
 The formula has same number of opening and closing paranthesis
 ```
+
+### Output Screenshot
+![Question 6 Output](Screenshot/screenshot-2026-11-21_20-26-35-alacritty.png)
 
 ---
 
@@ -224,25 +218,24 @@ The formula has same number of opening and closing paranthesis
 Write a program that inputs a line of text and prints out the count of vowels in it.
 
 ### Code: `vowel_count.py`
-```text
-─────┬──────────────────────────────────────────────────────────────────────────
-     │ File: vowel_count.py
-─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ s=input("Enter your string: ").upper()
-   2 │ vowel="AEIOU"
-   3 │ vowel_counter=0
-   4 │ for i in s:
-   5 │     if i in vowel:
-   6 │         vowel_counter+=1
-   7 │ print(f"The number of vowels: {vowel_counter}")
-─────┴──────────────────────────────────────────────────────────────────────────
+```python
+s=input("Enter your string: ").upper()
+vowel="AEIOU"
+vowel_counter=0
+for i in s:
+    if i in vowel:
+        vowel_counter+=1
+print(f"The number of vowels: {vowel_counter}")
 ```
 
 ### Terminal Output
 ```text
-Enter your string: Artificial Intelligence
-The number of vowels: 10
+Enter your string: for while and do-while are popular loops in which for and while are entry control loops while do-while is exit control loop
+The number of vowels: 39
 ```
+
+### Output Screenshot
+![Question 7 Output](Screenshot/screenshot-2026-11-21_20-32-09-alacritty.png)
 
 ---
 
@@ -252,30 +245,29 @@ The number of vowels: 10
 Write a program to input a line of text and print the biggest word (length wise) from it.
 
 ### Code: `big_word.py`
-```text
-─────┬──────────────────────────────────────────────────────────────────────────
-     │ File: big_word.py
-─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ sentence=input("Enter a sentence: ")
-   2 │ sentence = sentence.split()
-   3 │ big_ind = 0
-   4 │ big_Word=sentence[0]
-   5 │ for i in range(1,len(sentence)):
-   6 │     if len(sentence[big_ind]) == len(sentence[i]):
-   7 │         big_Word+= " & "+ sentence[i]
-   8 │     elif len(sentence[big_ind]) < len(sentence[i]):
-   9 │         big_Word = sentence[i]
-  10 │         big_ind = i
-  11 │ 
-  12 │ print(f"BIGGEST WORD(S): {big_Word}")
-─────┴──────────────────────────────────────────────────────────────────────────
+```python
+sentence=input("Enter a sentence: ")
+sentence = sentence.split()
+big_ind = 0
+big_Word=sentence[0]
+for i in range(1,len(sentence)):
+    if len(sentence[big_ind]) == len(sentence[i]):
+        big_Word+= " & "+ sentence[i]
+    elif len(sentence[big_ind]) < len(sentence[i]):
+        big_Word = sentence[i]
+        big_ind = i
+
+print(f"BIGGEST WORD(S): {big_Word}")
 ```
 
 ### Terminal Output
 ```text
-Enter a sentence: python data structures and algorithms
-BIGGEST WORD(S): structures & algorithms
+Enter a sentence: Rust is the most memory safe language that is not a garbage collected language
+BIGGEST WORD(S): collected
 ```
+
+### Output Screenshot
+![Question 8 Output](Screenshot/screenshot-2026-11-21_20-25-14-alacritty.png)
 
 ---
 
@@ -285,23 +277,22 @@ BIGGEST WORD(S): structures & algorithms
 Write a program to input a line of text and create a new line of text where each word of input line is reversed.
 
 ### Code: `reverse_words.py`
-```text
-─────┬──────────────────────────────────────────────────────────────────────────
-     │ File: reverse_words.py
-─────┼──────────────────────────────────────────────────────────────────────────
-   1 │ sentence = input("Enter a sentence: ")
-   2 │ sentence = sentence.split()
-   3 │ reversed_sentence = list()
-   4 │ for i in sentence:
-   5 │     reversed_sentence += i[::-1] + " "
-   6 │ reversed_sentence="".join(reversed_sentence)
-   7 │ print(f"Modified Sentence: {reversed_sentence}")
-─────┴──────────────────────────────────────────────────────────────────────────
+```python
+sentence = input("Enter a sentence: ")
+sentence = sentence.split()
+reversed_sentence = list()
+for i in sentence:
+    reversed_sentence += i[::-1] + " "
+reversed_sentence="".join(reversed_sentence)
+print(f"Modified Sentence: {reversed_sentence}")
 ```
 
 ### Terminal Output
 ```text
-Enter a sentence: hello world from python
-Modified Sentence: olleh dlrow morf nohtyp 
+Enter a sentence: I love python
+Modified Sentence: I evol nohtyp 
 ```
+
+### Output Screenshot
+![Question 9 Output](Screenshot/screenshot-2026-11-21_20-27-30-alacritty.png)
 
