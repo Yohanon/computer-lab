@@ -24,8 +24,8 @@ input line is reversed.
 2 -->  star_vowel.py
 3 -->  rev_str.py
 4 -->  phone_number.py
-5 -->
-6 -->
-7 -->
+5 -->  sentence.py
+6 -->  formula.py
+7 -->  vowel_count.py
 8 -->
 9 -->
