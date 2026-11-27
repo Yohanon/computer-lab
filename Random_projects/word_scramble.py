@@ -21,9 +21,13 @@ def word_generator():
     return random.choice(words)
 
 def scrambler(word):
-    word = list(word)
-    random.shuffle(word)
-    return ''.join(word)
+    if len(word) <= 1:
+        return word
+
+    chars = list(word)
+    while "".join(chars) == word:
+        random.shuffle(chars)
+    return "".join(chars)
 def menu():
     print("Please select an option from the following: ")
     print("1. Type play to start the game")
