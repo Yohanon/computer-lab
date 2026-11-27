@@ -1,6 +1,6 @@
 import random
 
-print("Welcome to world scramble game")
+print("Welcome to word scramble game")
 def rules():
     print("Rules of the game:")
     print("1. You will be given a scrambled word.")
@@ -20,22 +20,22 @@ def word_generator():
     ]
     return random.choice(words)
 
-def scambler(word):
+def scrambler(word):
     word = list(word)
     random.shuffle(word)
     return ''.join(word)
 def menu():
     print("Please select an option from the following: ")
-    print("1. Enter play to start the game")
-    print("2. Enter rules to print rules of the game")
-    print("3. To check number of successful attempts, enter score")
-    print("4. To check number of failed attempts, enter fail")
-    print("5. Enter exit to exit the game")
+    print("1. Type play to start the game")
+    print("2. Type rules to print the rules of the game")
+    print("3. Type score to check the number of successful attempts")
+    print("4. Type fail to check the number of failed attempts")
+    print("5. Type exit to exit the game")
 
 def user_choice():
     print("Please enter your choice: ")
     return input().strip().lower()
-def word_cheker(guess,word1):
+def word_checker(guess, word1):
     guess_return = list()
     word = list(word1)
     for i in range(len(word)):
@@ -78,7 +78,7 @@ def main():
 
 def play_game():
     word = word_generator()
-    scrambled_word = scambler(word)
+    scrambled_word = scrambler(word)
     attempts = 3
 
     print(f"Scrambled word: {scrambled_word}")
@@ -86,7 +86,7 @@ def play_game():
     while attempts > 0:
         guess = (input("Your guess: ").strip()).lower()
         if len(guess) == len(word):
-            flag = word_cheker(guess, word)
+            flag = word_checker(guess, word)
             if flag:
                 print("Congratulations! You guessed the correct word.")
                 return True
